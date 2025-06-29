@@ -122,9 +122,9 @@ Deactivate the virtual environment to return your terminal to normal:
 deactivate
 ```
 Navigate back to the project root directory:
-
+```
 cd ..
-
+```
 You have successfully set up the console. You are ready for operations.
 
 ## 5. Running the Skyglass Console
