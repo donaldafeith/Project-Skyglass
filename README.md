@@ -1,4 +1,6 @@
-# Skyglass Operational Console v4.0
+# Project Skyglass: A Citizen-Led Weather Intelligence System
+
+## Skyglass Operational Console v4.0
 ## 1. Mission Statement
 The Skyglass Operational Console is a professional-grade, standalone environmental intelligence platform. It is designed to run entirely on a local machine (laptop or desktop) for offline-first operation. Its mission is to provide any individual with the power to independently collect, analyze, and visualize critical data from a redundant network of global satellites and sensors, especially in scenarios where primary data sources are unavailable.
 
