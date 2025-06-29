@@ -1,0 +1,26 @@
+{
+  "name": "skyglass-operational-console",
+  "version": "4.0.0",
+  "description": "A standalone, multi-source environmental intelligence platform.",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently -k \"npm:start-backend\" \"npm:start-frontend\"",
+    "start-backend": "cd backend && . venv/bin/activate && flask run --port=5555",
+    "start-frontend": "wait-on http://127.0.0.1:5555 && electron .",
+    "build-react": "cd frontend && npm run build",
+    "package": "npm run build-react && electron-builder",
+    "test-backend": "cd backend && . venv/bin/activate && python -m unittest discover -s tests",
+    "backup": "cd backend && . venv/bin/activate && python cli/export_backup.py"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0",
+    "wait-on": "^7.0.1"
+  },
+  "build": {
+    "appId": "com.skyglass.console",
+    "files": [ "main.js", "frontend/build/**/*", "node_modules/**/*" ],
+    "extraResources": [ { "from": "backend", "to": "backend" } ]
+  }
+}
