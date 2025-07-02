@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Skyglass | Citizen Weather Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Project Skyglass 🌩️</h1>
+        <p>A Decentralized, Tamper-Proof Weather & Earth Intelligence System</p>
+    </header>
+    <main>
+        <h2>Data Registry Log</h2>
+        <p>This is an immutable log of all data collected by the system. Each file is secured with a SHA256 hash to guarantee its integrity.</p>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timestamp (UTC)</th>
+                        <th>Data Source</th>
+                        <th>File Path</th>
+                        <th class="hash-column">SHA256 Integrity Hash</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry['timestamp'] }}</td>
+                        <td>{{ entry['data_source'] }}</td>
+                        <td>{{ entry['file_path'] }}</td>
+                        <td class="hash-cell">{{ entry['sha256_hash'] }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4">No data has been logged yet. Run 'python skyglass.py fetch' to begin.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>Local-First, Citizen-Operated. Your Data, Your Eyes.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Core application and CLI framework
+click
+python-dotenv
+
+# For connecting to satellite data APIs and handling geospatial data
+sentinelhub
+rasterio
+pyproj
+shapely
+
+# For the local web viewer
+Flask
+
+# For the database registry
+SQLAlchemy
